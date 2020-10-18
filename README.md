@@ -1,12 +1,12 @@
 # Proxmox on NUC with Home Assistant
-Proxmox VE installation on a NUC with home Assistant
+Proxmox VE installation on a NUC with home Assistant VM
 
 ## Table of contents
 * [Installation](#Installation)
 * [Configuration](#Configuration)
 * [Update](#Update)
 * [Home Assistant Installation](#HA)
-
+* [Backup VMs to Synology](#backup)
 
 ## Installation
 
@@ -30,7 +30,7 @@ For newer version first look at: ```https://gist.github.com/whiskerz007/53c6aa5d
 ```apt --reinstall install proxmox-widget-toolkit```
 
 ## Update
-Go to Updates and make sure that all newest updates is installed. 
+Go to Updates and make sure that all newest updates is installed. Reboot after installation is completed.
 
 <a name="ha"></a>
 ## Deploy Home Assistant OS (official) with a script
@@ -89,7 +89,7 @@ To get the current IP address assigned to the VM from the command line
 ### Configure Network for Static IP Address
 
 To set a static IP address, use the following as an example
-- At the root prompt type `nmcli c mod $(nmcli -g uuid c) ipv4.method manual ipv4.addresses "192.168.20.170/24" ipv4.gateway "192.168.20.1" ipv4.dns "8.8.8.8,8.8.4.4"`
+- At the root prompt type `nmcli c mod $(nmcli -g uuid c) ipv4.method manual ipv4.addresses "192.168.10.80/24" ipv4.gateway "192.168.10.254" ipv4.dns "192.168.10.254"`
 - At the root prompt type `nmcli c up $(nmcli -g uuid c)`
 
 ### Configure Network for DHCP
@@ -119,4 +119,27 @@ To resize the disk after the first boot
 - At the root prompt type `sgdisk -e /dev/sda`
 - At the root prompt type `reboot`
 - Verify resize was successful by typing `df -h /dev/sda8` at the root prompt
+
+<a name="backup"></a>
+## Backup VMs to Synology regulary 
+
+### Synology 
+1. Create a shared folder in Synology.
+2. Create a new user Proxmox and give this account write acces on the new shared folder.
+3. Go to > File Services Enable SMB amd under advanced Enable SMBv3
+
+### Proxmox
+3. Go to > Proxmox Datacenter > Storage and add CIFS storage
+        
+    ID: `synology`
+    Server: `192.168.10.10`
+    Username: `proxmox`
+    Password: `xxx`
+    Share: `Sysbackups`
+    Max Backups: `2`
+    Content: `VZDump backup file, Disk image, ISO image, Container`
+
+4. Go to > Backup > Add > Storage Synology and use LZO(FAST) as compression
+5. Run backup. For a test run you can restore the backup to a new VM and pauze the backuped one. Start the restored version and test if everything is working. 
+
 
