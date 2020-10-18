@@ -1,11 +1,11 @@
-# Proxmox on NUC
-Proxmox VE installation on a NUC
+# Proxmox on NUC with Home Assistant
+Proxmox VE installation on a NUC with home Assistant
 
 ## Table of contents
 * [Installation](#Installation)
 * [Configuration](#Configuration)
 * [Update](#Update)
-* [HA Installation](#Home Assistant VM Deployment)
+* [HA Installation](#HA)
 
 
 ## Installation
@@ -32,4 +32,5 @@ For newer version first look at: ```https://gist.github.com/whiskerz007/53c6aa5d
 # Update
 Go to Updates and make sure that all newest updates is installed. 
 
+<a name="ha"></a>
 # Home Assistant VM Deployment
