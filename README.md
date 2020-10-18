@@ -44,9 +44,9 @@ apt --reinstall install proxmox-widget-toolkit
 Go to Updates and make sure that all newest updates is installed. Reboot after installation is completed.
 
 <a name="ha"></a>
-## Deploy Home Assistant OS (official) with a script
+## Deploy (Supported) Home Assistant OS with a simple script
 
-I'm using the script from whiskerz007. Before using this script, check his github page for the newest version: ```https://github.com/whiskerz007/proxmox_hassos_install```
+*I'm using the script from whiskerz007. Before using this script, check his github page for the newest version: `https://github.com/whiskerz007/proxmox_hassos_install`*
 
 ### New Proxmox VM with Home Assistant
 
