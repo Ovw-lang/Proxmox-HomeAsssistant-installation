@@ -8,9 +8,9 @@
 * [Installation](#Installation)
 * [Configuration](#Configuration)
 * [Update](#Update)
-* [Home Assistant Installation](#HA)
+* [Home Assistant VM Installation](#HA)
 * [Home Assistant Add-ons]($HA_addons)
-* [Backup VMs to Synology](#backup)
+* [HA VM Automatic Backups to Synology](#backup)
 
 ## Installation
 
@@ -150,7 +150,7 @@ To resize the disk after the first boot
 4. Mini Graph Card ```https://github.com/kalkih/mini-graph-card```
 
 <a name="backup"></a>
-## Backup VMs to Synology regulary 
+## Home Assistant automatic backups to Synology 
 
 ### Synology 
 1. Create a shared folder in Synology.
