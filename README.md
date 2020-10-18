@@ -175,6 +175,6 @@ Share: Sysbackups
 Max Backups: 2
 Content: VZDump backup file, Disk image, ISO image, Container
 ```
-
 4. Go to > Backup > Add > Storage Synology and use LZO(FAST) as compression
+![backup](https://user-images.githubusercontent.com/45032723/96386645-c43f8680-119c-11eb-8f5e-fc319f73e3a8.png)
 5. Run backup. For a test run you can restore the backup to a new VM and pauze the backuped one. Start the restored version and test if everything is working. 
