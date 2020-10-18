@@ -6,6 +6,7 @@ Proxmox VE installation on a NUC with home Assistant VM
 * [Configuration](#Configuration)
 * [Update](#Update)
 * [Home Assistant Installation](#HA)
+* [Home Assistant Add-ons]($HA_addons)
 * [Backup VMs to Synology](#backup)
 
 ## Installation
@@ -122,6 +123,24 @@ To resize the disk after the first boot
 - At the root prompt type `sgdisk -e /dev/sda`
 - At the root prompt type `reboot`
 - Verify resize was successful by typing `df -h /dev/sda8` at the root prompt
+
+<a name="backup"></a>
+## Home Assistant Add-ons installed
+
+### Official Add-ons 
+1. ESPHome
+2. File editor
+3. Mosquitto broker
+4. Samba share
+
+### Non-official Add-ons
+1. HACS ```https://hacs.xyz/```
+
+#### HACS Add-ons
+1. Lovelace Swipe Navigation ```https://github.com/maykar/lovelace-swipe-navigation```
+2. Mini Media Player ```https://github.com/kalkih/mini-media-player```
+3. Vacuum Card ```https://github.com/denysdovhan/vacuum-card```
+4. Mini Graph Card ```https://github.com/kalkih/mini-graph-card```
 
 <a name="backup"></a>
 ## Backup VMs to Synology regulary 
