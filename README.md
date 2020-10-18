@@ -1,7 +1,8 @@
-# Proxmox on NUC with Home Assistant
-Proxmox VE installation on a NUC with home Assistant VM
+# Proxmox with Home Assistant and auto backup Synology
 
 ![banner](https://user-images.githubusercontent.com/45032723/96386318-4f6b4d00-119a-11eb-8ac6-fb4025eae0eb.png) 
+
+*Current hardware: NUC10FNK*
 
 ## Table of contents
 * [Installation](#Installation)
@@ -26,14 +27,18 @@ For newer version first look at: ```https://gist.github.com/whiskerz007/53c6aa5d
 ```apt-get update```
 
 ### Add PVE Community Repo
-```echo "deb http://download.proxmox.com/debian/pve $(grep "VERSION=" /etc/os-release | sed -n 's/.*(\(.*\)).*/\1/p') pve-no-subscription" > /etc/apt/sources.list.d/pve-no-enterprise.list```
+```
+echo "deb http://download.proxmox.com/debian/pve $(grep "VERSION=" /etc/os-release | sed -n 's/.*(\(.*\)).*/\1/p') pve-no-subscription" > /etc/apt/sources.list.d/pve-no-enterprise.list```
 
-```apt-get update```
+apt-get update
+```
 
 ### Remove nag (disable 'no subscription' message when logon)
-```echo "DPkg::Post-Invoke { \"dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxlib\.js$'; if [ \$? -eq 1 ]; then { echo 'Removing subscription nag from UI...'; sed -i '/data.status/{s/\!//;s/Active/NoMoreNagging/}' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js; }; fi\"; };" > /etc/apt/apt.conf.d/no-nag-script```
+```
+echo "DPkg::Post-Invoke { \"dpkg -V proxmox-widget-toolkit | grep -q '/proxmoxlib\.js$'; if [ \$? -eq 1 ]; then { echo 'Removing subscription nag from UI...'; sed -i '/data.status/{s/\!//;s/Active/NoMoreNagging/}' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js; }; fi\"; };" > /etc/apt/apt.conf.d/no-nag-script
 
-```apt --reinstall install proxmox-widget-toolkit```
+apt --reinstall install proxmox-widget-toolkit
+```
 
 ## Update
 Go to Updates and make sure that all newest updates is installed. Reboot after installation is completed.
