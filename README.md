@@ -159,11 +159,11 @@ To resize the disk after the first boot
 3. Go to > File Services Enable SMB amd under advanced Enable SMBv3
 
 ### Proxmox
-3. Go to > Proxmox Datacenter > Storage and add CIFS storage
+1. Go to > Proxmox Datacenter > Storage and add CIFS storage
 
 ![Add Storage](https://user-images.githubusercontent.com/45032723/96386286-fc919580-1199-11eb-9338-9a6bc0f65f17.png) 
 
-4. Fill out the CIFS form:
+2. Fill out the CIFS form:
 
 ![Image of backup](https://user-images.githubusercontent.com/45032723/96386234-8856f200-1199-11eb-9da8-95bb263be438.png)
 
@@ -176,10 +176,10 @@ Share: Sysbackups
 Max Backups: 2
 Content: VZDump backup file, Disk image, ISO image, Container
 ```
-4. Go to > Backup > Add > Storage Synology and use LZO(FAST) as compression
+3. Go to > Backup > Add > Storage Synology and use LZO(FAST) as compression
 
 ![backup](https://user-images.githubusercontent.com/45032723/96386645-c43f8680-119c-11eb-8f5e-fc319f73e3a8.png)
-5. Select 'run now' for first backup and test run.
+4. Select 'run now' for first backup and test run.
 
 <a name="restore"></a>
 ## Home Assistant restore backup to Proxmox
@@ -190,7 +190,7 @@ Content: VZDump backup file, Disk image, ISO image, Container
 ![Restore](https://user-images.githubusercontent.com/45032723/96386772-9f97de80-119d-11eb-8e0f-3b98a45f5ae8.png)
 3. Choose an VM ID and click again on `Restore`
 
-![Restore_again] (https://user-images.githubusercontent.com/45032723/96386797-cfdf7d00-119d-11eb-9c21-88261c2c1043.png)
+![Restore_again](https://user-images.githubusercontent.com/45032723/96386797-cfdf7d00-119d-11eb-9c21-88261c2c1043.png)
 
 4. Restore progress is shown in the Task Viewer. 
 
