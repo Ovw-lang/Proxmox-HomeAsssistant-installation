@@ -179,6 +179,7 @@ Content: VZDump backup file, Disk image, ISO image, Container
 3. Go to > Backup > Add > Storage Synology and use LZO(FAST) as compression
 
 ![backup](https://user-images.githubusercontent.com/45032723/96386645-c43f8680-119c-11eb-8f5e-fc319f73e3a8.png)
+
 4. Select 'run now' for first backup and test run.
 
 <a name="restore"></a>
