@@ -1,6 +1,8 @@
 # Proxmox on NUC with Home Assistant
 Proxmox VE installation on a NUC with home Assistant VM
 
+![banner](https://user-images.githubusercontent.com/45032723/96386318-4f6b4d00-119a-11eb-8ac6-fb4025eae0eb.png) 
+
 ## Table of contents
 * [Installation](#Installation)
 * [Configuration](#Configuration)
@@ -153,7 +155,12 @@ To resize the disk after the first boot
 ### Proxmox
 3. Go to > Proxmox Datacenter > Storage and add CIFS storage
 
+![Add Storage](https://user-images.githubusercontent.com/45032723/96386286-fc919580-1199-11eb-9338-9a6bc0f65f17.png) 
+
+4. Fill out the CIFS form:
+
 ![Image of backup](https://user-images.githubusercontent.com/45032723/96386234-8856f200-1199-11eb-9da8-95bb263be438.png)
+
     ID: `synology`
     Server: `192.168.10.10`
     Username: `proxmox`
