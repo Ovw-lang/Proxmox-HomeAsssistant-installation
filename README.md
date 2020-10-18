@@ -11,6 +11,7 @@
 * [Home Assistant VM Installation](#HA)
 * [Home Assistant Add-ons]($HA_addons)
 * [HA VM Automatic Backups to Synology](#backup)
+* [Restore HA VM](#restore)
 
 ## Installation
 
@@ -176,5 +177,21 @@ Max Backups: 2
 Content: VZDump backup file, Disk image, ISO image, Container
 ```
 4. Go to > Backup > Add > Storage Synology and use LZO(FAST) as compression
+
 ![backup](https://user-images.githubusercontent.com/45032723/96386645-c43f8680-119c-11eb-8f5e-fc319f73e3a8.png)
-5. Run backup. For a test run you can restore the backup to a new VM and pauze the backuped one. Start the restored version and test if everything is working. 
+5. Select 'run now' for first backup and test run.
+
+<a name="restore"></a>
+## Home Assistant restore backup to Proxmox
+
+1. Go to the Synology storage
+2. Select the backup file and click on `Restore`
+
+![Restore](https://user-images.githubusercontent.com/45032723/96386772-9f97de80-119d-11eb-8e0f-3b98a45f5ae8.png)
+3. Choose an VM ID and click again on `Restore`
+
+![Restore_again] (https://user-images.githubusercontent.com/45032723/96386797-cfdf7d00-119d-11eb-9c21-88261c2c1043.png)
+
+4. Restore progress is shown in the Task Viewer. 
+
+![Restore_progress](https://user-images.githubusercontent.com/45032723/96386839-2b116f80-119e-11eb-85bb-bf0e0af4f4a0.png)
