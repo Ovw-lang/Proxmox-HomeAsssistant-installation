@@ -167,13 +167,13 @@ To resize the disk after the first boot
 ![Image of backup](https://user-images.githubusercontent.com/45032723/96386234-8856f200-1199-11eb-9da8-95bb263be438.png)
 
 ```
-ID: **synology**
-Server: **192.168.10.10**
-Username: **proxmox**
-Password: **xxx**
-Share: **Sysbackups**
-Max Backups: **2**
-Content: **VZDump backup file, Disk image, ISO image, Container**
+ID: synology
+Server: 192.168.10.10
+Username: proxmox
+Password: xxx
+Share: Sysbackups
+Max Backups: 2
+Content: VZDump backup file, Disk image, ISO image, Container
 ```
 
 4. Go to > Backup > Add > Storage Synology and use LZO(FAST) as compression
